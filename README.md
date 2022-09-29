@@ -1,6 +1,4 @@
-# hats-finance-ctf2-vault-challenge
-
-## The Hats Challenge
+# The Hats Challenge
 
 The [`Vault.sol`](https://github.com/hats-finance/vault-game/blob/main/contracts/Vault.sol) is deployed with the contract owning 1 ETH of the shares.
 
