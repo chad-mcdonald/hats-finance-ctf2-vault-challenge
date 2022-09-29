@@ -10,6 +10,15 @@ Link to challenge: https://github.com/hats-finance/vault-game
 
 ## Solution
 
+The solution is implemented in [Vault.t.sol](https://github.com/chad-mcdonald/hats-finance-ctf2-vault-challenge/blob/master/test/Vault.t.sol)
+
+Run the solution using [forge](https://github.com/foundry-rs/foundry):
+
+```bash
+forge test -vvv
+```
+## Write-up
+
 Vault has a vulnerable `_withdraw` function that may be reentered to drain the contract of all assets. 
 
 This exploit relies on chaining two vulnerabilities together.
