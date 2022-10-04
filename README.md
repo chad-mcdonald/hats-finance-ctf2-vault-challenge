@@ -127,6 +127,6 @@ The two reentrant calls will each send 1 ETH to `owner()` which leaves the Vault
 
 There are a few ways to fix this issue. 
 
-1. Use a nonReentrant modifier on the `deposit` and `mint` functions. This will prevent an attacker from reentering the `_withdraw` function upon recieving ETH.
+1. Use a nonReentrant modifier on the `withdraw` and `redeem` functions. This will prevent an attacker from reentering the `_withdraw` function upon recieving ETH.
 2. Remove the  `excessETH` check from the `_withdraw` function. Write a separate function to allow the `vault.owner()` to remove excess Ether. This fix has the additional benefit of saving users gas by removing a wasteful if statement from the `_withdraw` function.
 3. Move  `uint256 excessETH = totalAssets() - totalSupply()` below `Address.sendValue(receiver, amount)`. This ensures `excessETH` is set after the reentrant `Address.sendValue` call.
